@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import TodayWeather from './TodayWeather.js';
+import Pins from './Pins.js';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
         </div>
 
         <TodayWeather />
+        <Pins />
       </div>
     );
   }
