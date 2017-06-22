@@ -31,8 +31,6 @@ const boards = [
   }
 ]
 
-const board = boards[Math.floor(boards.length * Math.random())]
-
 const getCorrectBoard = (weather) => boards.filter((board) => board.weather === weather)
 
 class Pins extends React.Component {
@@ -41,8 +39,8 @@ class Pins extends React.Component {
     pins: []
   }
 
-  componentDidMount() {
-    const [currentBoard] = getCorrectBoard(board.weather)
+  fetchBoard = (weather) => {
+    const [currentBoard] = getCorrectBoard(weather)
     fetch(`https://api.pinterest.com/v1/boards/${currentBoard.boardID}/pins/?access_token=AanQg2wagvJBQaZE9mrENe5ctPdCFMmM1NfWAoREGaxOIwBDZwAAAAA&fields=id%2Clink%2Cnote%2Curl%2Cimage%2Cattribution%2Cboard%2Cmetadata%2Cmedia%2Ccreated_at%2Ccreator%2Coriginal_link`)
     .then((raw) => raw.json())
     .then((res) => {
@@ -51,6 +49,12 @@ class Pins extends React.Component {
         pins: res.data
       })
     })
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+      if(prevProps.weather !== this.props.weather) {
+        this.fetchBoard(this.props.weather)
+      }
   }
 
   render() {

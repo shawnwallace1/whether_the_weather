@@ -3,10 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 
 import BoardImage from "./boardimage.jsx"
-import Pinterest from "./pinterest.jsx"
 
 import TodayWeather from './TodayWeather.js';
-import Pins from './Pins.js';
 
 
 class App extends Component {
@@ -29,7 +27,6 @@ class App extends Component {
         </div>
 
         <TodayWeather />
-        <Pins />
       </div>
     );
   }
