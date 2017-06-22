@@ -52,16 +52,15 @@ class TodayWeather extends React.Component {
 
   render () {
     return (
-
-    <div className="box">
-        <input
-          ref="location"
-          type="text"
-          id="search"
-          placeholder="Where are you wearing?" />
-        <button onClick={this._handleUserSearch} className="icon"><i className="fa fa-search"></i></button>
-        <Pins weather={this.state.weather}/>
-    </div>
+      <div className="box">
+              <div className="container-4">
+                <input ref= "location" type="search" id="search" placeholder="Search..." />
+                <button onClick={this._handleUserSearch} className="icon"><i className="fa fa-search"></i></button>
+              </div>
+              <div className="pins">
+              <Pins weather={this.state.weather}/>
+              </div>
+            </div>
 
     )
   }

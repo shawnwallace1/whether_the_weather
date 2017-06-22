@@ -65,12 +65,10 @@ class Pins extends React.Component {
             fontSize: '15px',
             textDecoration: 'initial'
           }}>
-            <a href="https://za.pinterest.com/banann1ka/clothes/">
-              Some outfit suggestions for you to try!
-            </a>
+
           </p>
         </h1>
-        <div id="container">
+        <div id="pins">
           {this.state.pins.map((pin) => {
             return (
               <img src={pin.image.original.url} style={{
