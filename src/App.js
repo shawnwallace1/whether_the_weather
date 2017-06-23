@@ -30,7 +30,6 @@ style={{
                 <menButton className="men"></menButton>
 
                 <womenButton className="women"></womenButton>
-
             </div>
           </div>
 

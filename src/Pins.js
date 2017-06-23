@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-
 const boards = [
   {
     weather: 'precwinter',
@@ -71,10 +70,12 @@ class Pins extends React.Component {
         <div id="pins">
           {this.state.pins.map((pin) => {
             return (
-              <img src={pin.image.original.url} style={{
-                  maxHeight: '500px'
-                }}/>
-            )
+              <div style={{height:"300px", width:"300px", backgroundSize:"cover", backgroundImage:"url('"+pin.image.original.url+"')"}}></div>
+          )
+            //   <img src={pin.image.original.url} style={{
+            //       maxHeight: '500px'
+            //     }}/>
+            // )
           })}
         </div>
       </div>
